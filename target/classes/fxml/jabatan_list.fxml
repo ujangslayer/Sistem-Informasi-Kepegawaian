@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml" 
+      stylesheets="@../styles/style.css"
+      fx:controller="com.mycompany.mavenproject3.controller.JabatanController">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <VBox styleClass="card" spacing="15" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button text="&lt; Kembali" onAction="#handleBack" styleClass="btn-link"/>
+            <Label text="Manage Data Jabatan" styleClass="label-title"/>
+        </HBox>
+
+        <TableView fx:id="table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNama" text="Nama Jabatan" prefWidth="200"/>
+                <TableColumn fx:id="colGaji" text="Gaji Pokok" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <TextField fx:id="txtNama" promptText="Nama Jabatan" prefWidth="200"/>
+            <TextField fx:id="txtGaji" promptText="Gaji Pokok (Angka)" prefWidth="150"/>
+            
+            <Button text="Simpan" onAction="#save" styleClass="button, btn-success"/>
+            <Button text="Hapus" onAction="#delete" styleClass="button, btn-danger"/>
+        </HBox>
+    </VBox>
+</VBox>

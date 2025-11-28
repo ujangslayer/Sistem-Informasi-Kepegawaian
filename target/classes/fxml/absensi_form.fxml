@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="CENTER" 
+      stylesheets="@../styles/style.css"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.mavenproject3.controller.AbsensiController">
+    
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <VBox styleClass="card" alignment="CENTER" spacing="20" maxWidth="500">
+        <HBox alignment="CENTER_LEFT">
+            <Button text="&lt; Kembali Menu" onAction="#handleBack" styleClass="btn-link"/>
+        </HBox>
+
+        <Label text="Form Absensi Harian" styleClass="label-title"/>
+        <Label text="Masukkan NIP Anda untuk absen" styleClass="label-sub"/>
+        
+        <VBox spacing="5" alignment="CENTER_LEFT" maxWidth="300">
+            <Label text="NIP Anda:" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtNip" promptText="Contoh: 12345"/>
+        </VBox>
+        
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Masuk" onAction="#clockIn" styleClass="button, btn-success" prefWidth="160" prefHeight="50"/>
+            <Button text="Pulang" onAction="#clockOut" styleClass="button, btn-danger" prefWidth="160" prefHeight="50"/>
+        </HBox>
+        
+        <Label text="*Pastikan NIP sesuai data kepegawaian" styleClass="label-sub"/>
+    </VBox>
+</VBox>

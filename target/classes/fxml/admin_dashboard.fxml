@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="30" alignment="CENTER" 
+      stylesheets="@../styles/style.css"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.mavenproject3.controller.AdminDashboardController">
+    
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+    
+    <Label text="Dashboard Admin" styleClass="label-white"/>
+    
+    <HBox spacing="20" alignment="CENTER" styleClass="card">
+        <Button text="Manage Pegawai" onAction="#openPegawai" styleClass="button" prefWidth="250" prefHeight="50"/>
+        <Button text="Manage Jabatan" onAction="#openJabatan" styleClass="button" prefWidth="250" prefHeight="50"/>
+        <Button text="Manage Absensi" onAction="#openAbsensi" styleClass="button" prefWidth="250" prefHeight="50"/>
+    </HBox>
+
+    <Button text="KELUAR" onAction="#logout" styleClass="button, btn-danger" prefWidth="200"/>
+</VBox>

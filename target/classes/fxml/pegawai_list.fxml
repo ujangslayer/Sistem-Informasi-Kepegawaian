@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml" 
+      stylesheets="@../styles/style.css"
+      fx:controller="com.mycompany.mavenproject3.controller.PegawaiController">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <VBox styleClass="card" spacing="15" VBox.vgrow="ALWAYS">
+        
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button text="&lt; Kembali" onAction="#handleBack" styleClass="btn-link"/>
+            <Label text="Manage Data Pegawai" styleClass="label-title"/>
+        </HBox>
+
+        <TableView fx:id="table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNip" text="NIP" prefWidth="100"/>
+                <TableColumn fx:id="colNama" text="Nama" prefWidth="180"/>
+                <TableColumn fx:id="colJabatan" text="Jabatan" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <Label text="Form Input / Edit Data" style="-fx-font-weight: bold; -fx-text-fill: #555;"/>
+        
+        <GridPane hgap="15" vgap="15">
+            <TextField fx:id="txtNip" promptText="NIP" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNama" promptText="Nama Lengkap" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <ComboBox fx:id="comboJabatan" promptText="Pilih Jabatan" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="200"/>
+            
+            <TextField fx:id="txtUsername" promptText="Username" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="txtPassword" promptText="Password" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button fx:id="btnSave" text="Simpan Baru" onAction="#save" styleClass="button, btn-success"/>
+            <Button text="Batal" onAction="#clearForm" styleClass="button, btn-warning"/>
+            <Button fx:id="btnDelete" text="Hapus" onAction="#delete" styleClass="button, btn-danger"/>
+            
+            <Region HBox.hgrow="ALWAYS"/> <Button text="Lihat Gaji" onAction="#viewGaji" styleClass="button"/>
+            <Button text="Cetak Slip" onAction="#exportGaji" styleClass="button"/>
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,94 @@
+/* style.css */
+
+/* 1. BACKGROUND GLOBAL (Gradasi Biru-Ungu Modern) */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #1cb5e0 0%, #000046 100%);
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* 2. CARD (Kotak Putih Konten) */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 5);
+    -fx-padding: 30px;
+}
+
+/* 3. JUDUL & TEXT */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.label-white {
+    -fx-text-fill: white; /* Untuk teks di atas background gelap */
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+.label-sub {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 12px;
+}
+
+/* 4. INPUT FIELD (Modern & Clean) */
+.text-field, .password-field, .combo-box, .date-picker {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #1cb5e0;
+    -fx-background-color: white;
+}
+
+/* 5. BUTTONS (Tombol Keren) */
+.button {
+    -fx-background-color: #3498db; /* Biru Default */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30px; /* Tombol Bulat */
+    -fx-cursor: hand;
+    -fx-padding: 10px 20px;
+}
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+    -fx-translate-y: -2px;
+}
+.button:pressed { -fx-translate-y: 1px; }
+
+/* Variasi Warna Tombol */
+.btn-success { -fx-background-color: #2ecc71; } /* Hijau (Simpan/Masuk) */
+.btn-success:hover { -fx-background-color: #27ae60; }
+
+.btn-danger { -fx-background-color: #e74c3c; } /* Merah (Hapus/Logout) */
+.btn-danger:hover { -fx-background-color: #c0392b; }
+
+.btn-warning { -fx-background-color: #f1c40f; -fx-text-fill: #333; } /* Kuning (Clear) */
+
+.btn-link { /* Tombol "Kembali" */
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db; 
+    -fx-underline: true;
+}
+.btn-link:hover { -fx-text-fill: white; }
+
+/* 6. TABLE VIEW */
+.table-view {
+    -fx-base: white;
+    -fx-control-inner-background: white;
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+.table-view .column-header-background {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5px 5px 0 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+.table-row-cell:odd { -fx-background-color: #f2f6f8; }
+.table-row-cell:selected { -fx-background-color: #086095; }

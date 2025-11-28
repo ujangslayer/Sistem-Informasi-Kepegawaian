@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml" 
+      stylesheets="@../styles/style.css"
+      fx:controller="com.mycompany.mavenproject3.controller.ProfilPegawaiController">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <VBox styleClass="card" spacing="15" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button text="&lt; Kembali" onAction="#handleBack" styleClass="btn-link"/>
+            <Label text="Profil &amp; Riwayat" styleClass="label-title"/>
+        </HBox>
+        
+        <GridPane vgap="10" hgap="15" style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 10;">
+            <Label text="NIP" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblNip" text=": ..." GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            
+            <Label text="Nama Lengkap" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblNama" text=": ..." GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            
+            <Label text="Jabatan" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblJabatan" text=": ..." GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            
+            <Label text="Status Role" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblRole" text=": ..." GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+        <Label text="Riwayat Kehadiran Anda" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+
+        <TableView fx:id="table" VBox.vgrow="ALWAYS" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colTanggal" text="Tanggal" prefWidth="120"/>
+                <TableColumn fx:id="colMasuk" text="Jam Masuk" prefWidth="100"/>
+                <TableColumn fx:id="colPulang" text="Jam Pulang" prefWidth="100"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>

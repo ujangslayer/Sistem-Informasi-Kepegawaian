@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="25" alignment="CENTER" 
+      stylesheets="@../styles/style.css"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.mavenproject3.controller.UserDashboardController">
+    
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <Label text="Dashboard Pegawai" styleClass="label-white"/>
+    <Label text="Selamat Datang, Silakan pilih menu di bawah." styleClass="label-sub" style="-fx-text-fill: white;"/>
+    
+    <VBox spacing="15" alignment="CENTER" styleClass="card" maxWidth="400">
+        <Button text="Isi Absensi Harian" onAction="#openAbsensiForm" styleClass="button, btn-success" maxWidth="Infinity" prefHeight="45"/>
+        <Button text="Lihat Profil &amp; Riwayat" onAction="#openProfil" styleClass="button" maxWidth="Infinity" prefHeight="45"/>
+    </VBox>
+    
+    <Button text="Keluar" onAction="#logout" styleClass="button, btn-danger" prefWidth="150"/>
+</VBox>
