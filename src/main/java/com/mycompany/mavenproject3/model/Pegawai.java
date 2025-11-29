@@ -6,7 +6,7 @@ public class Pegawai extends Person {
     private String username;
     private String password;
     private String role; 
-    private String namaJabatan; // PENTING
+    private String namaJabatan; 
 
     public Pegawai() { super(); }
     public Pegawai(int id, String nip, String nama, Integer jabatanId, String username, String password, String role) {

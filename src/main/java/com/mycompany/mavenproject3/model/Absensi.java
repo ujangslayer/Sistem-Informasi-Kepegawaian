@@ -11,7 +11,6 @@ public class Absensi {
     private LocalTime waktuPulang;
     private String status;
     
-    // TAMBAHAN: Variabel untuk menyimpan Nama
     private String namaPegawai; 
 
     public Absensi() {}
@@ -25,7 +24,6 @@ public class Absensi {
         this.status = status;
     }
 
-    // Getter & Setter Standar
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -44,7 +42,6 @@ public class Absensi {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
-    // TAMBAHAN: Getter & Setter untuk Nama Pegawai
     public String getNamaPegawai() { return namaPegawai; }
     public void setNamaPegawai(String namaPegawai) { this.namaPegawai = namaPegawai; }
 }

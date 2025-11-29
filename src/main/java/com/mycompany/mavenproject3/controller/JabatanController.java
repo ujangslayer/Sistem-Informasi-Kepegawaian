@@ -59,7 +59,6 @@ public class JabatanController {
 
             Jabatan j = new Jabatan();
             j.setNama(txtNama.getText());
-            // Konversi String ke BigDecimal
             j.setGajiPokok(new BigDecimal(txtGaji.getText()));
             
             dao.insert(j);
@@ -84,10 +83,8 @@ public class JabatanController {
         }
     }
 
-    // --- LOGIC TOMBOL BACK ---
     @FXML
     private void handleBack() {
-        // Menutup jendela saat ini
         try {
             Stage stage = (Stage) txtNama.getScene().getWindow();
             stage.close();

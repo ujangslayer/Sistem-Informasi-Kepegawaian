@@ -25,7 +25,6 @@ public class AdminDashboardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
             Parent root = loader.load();
             
-            // UKURAN LOGIN (Konsisten)
             Stage loginStage = new Stage();
             loginStage.setScene(new Scene(root, 1000, 700)); 
             loginStage.setTitle("Sistem Informasi Kepegawaian - Login");
@@ -35,13 +34,13 @@ public class AdminDashboardController {
         } catch (IOException e) { e.printStackTrace(); }
     }
 
-    // Method Open yang sudah di-update ukurannya
+
     private void open(String path, String title) {
         try {
             Stage st = new Stage();
             Parent r = FXMLLoader.load(getClass().getResource(path));
             
-            // UKURAN FITUR (Konsisten)
+    
             st.setScene(new Scene(r, 1000, 700));
             
             st.setTitle(title);

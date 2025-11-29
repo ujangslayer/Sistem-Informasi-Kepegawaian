@@ -34,7 +34,7 @@ public class UserDashboardController {
             
             Stage st = new Stage();
             
-            // UKURAN PROFIL
+          
             st.setScene(new Scene(root, 1000, 700));
             
             st.setTitle("Profil Saya");
@@ -53,7 +53,7 @@ public class UserDashboardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
             Parent root = loader.load();
             
-            // UKURAN LOGIN
+         
             Stage loginStage = new Stage();
             loginStage.setScene(new Scene(root, 1000, 700));
             
@@ -68,7 +68,6 @@ public class UserDashboardController {
             Stage st = new Stage();
             Parent r = FXMLLoader.load(getClass().getResource(path));
             
-            // UKURAN FITUR USER
             st.setScene(new Scene(r, 1000, 700));
             
             st.setTitle(title);

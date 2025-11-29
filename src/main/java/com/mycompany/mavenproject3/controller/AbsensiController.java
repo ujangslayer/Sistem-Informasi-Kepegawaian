@@ -15,10 +15,9 @@ import java.util.List;
 
 public class AbsensiController {
 
-    // ADMIN VIEW - TABEL
+
     @FXML private TableView<Absensi> table;
     
-    // KITA UBAH NAMA VARIABELNYA BIAR JELAS
     @FXML private TableColumn<Absensi, String> colNamaPegawai; 
     
     @FXML private TableColumn<Absensi, String> colTanggal;
@@ -26,12 +25,12 @@ public class AbsensiController {
     @FXML private TableColumn<Absensi, String> colPulang;
     @FXML private TableColumn<Absensi, String> colStatus;
 
-    // ADMIN VIEW - INPUT
+ 
     @FXML private ComboBox<String> comboPegawai;
     @FXML private DatePicker datePicker;
     @FXML private ComboBox<String> comboStatus;
 
-    // USER VIEW - INPUT
+
     @FXML private TextField txtNip;
 
     private final AbsensiService service = new AbsensiService();
@@ -43,8 +42,7 @@ public class AbsensiController {
         if (table != null) {
           
             
-            // MAPPING YANG BENAR:
-            // Variabel FXML "colNamaPegawai" diisi data dari Model "namaPegawai"
+      
             colNamaPegawai.setCellValueFactory(new PropertyValueFactory<>("namaPegawai"));
             
             colTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
@@ -69,7 +67,6 @@ public class AbsensiController {
         } catch (Exception e) { e.printStackTrace(); }
     }
 
-    // --- LOGIC CLOCK IN/OUT ---
     @FXML private void clockIn() { processAbsensi(true); }
     @FXML private void clockOut() { processAbsensi(false); }
 
@@ -97,7 +94,6 @@ public class AbsensiController {
         }
     }
 
-    // --- LOGIC ADMIN ---
     private void loadPegawaiCombo() {
         try {
             List<Pegawai> list = pegDao.findAll();

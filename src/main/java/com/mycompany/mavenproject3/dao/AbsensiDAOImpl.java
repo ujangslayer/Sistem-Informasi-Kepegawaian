@@ -10,7 +10,6 @@ import java.util.List;
 
 public class AbsensiDAOImpl implements AbsensiDAO {
 
-    // --- MAPPING DATA DENGAN JOIN ---
     private Absensi map(ResultSet rs) throws Exception {
         Date dateSql = rs.getDate("tanggal");
         LocalDate localDate = (dateSql != null) ? dateSql.toLocalDate() : null;
@@ -30,12 +29,10 @@ public class AbsensiDAOImpl implements AbsensiDAO {
                 rs.getString("status")
         );
 
-        // AMBIL NAMA DARI HASIL JOIN (p.nama)
-        // Kita pakai try-catch ringan jaga-jaga kalau kolom 'nama_pegawai' tidak ter-select di query tertentu
+      
         try {
             a.setNamaPegawai(rs.getString("nama_pegawai"));
         } catch (SQLException e) {
-            // Abaikan jika kolom nama tidak ada di query
         }
         
         return a;
@@ -80,10 +77,8 @@ public class AbsensiDAOImpl implements AbsensiDAO {
     }
 
     @Override
-    // FITUR UTAMA: JOIN TABLE DISINI
     public List<Absensi> findAll() throws Exception {
         List<Absensi> list = new ArrayList<>();
-        // Query Join: Ambil semua data absensi + nama pegawai
         String sql = "SELECT a.*, p.nama AS nama_pegawai " +
                      "FROM absensi a " +
                      "JOIN pegawai p ON a.pegawai_id = p.id " +

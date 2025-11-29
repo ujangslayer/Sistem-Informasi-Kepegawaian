@@ -18,17 +18,17 @@ public class AuthService {
             Pegawai p = userDAO.findByUsername(username);
             
             if (p == null) {
-                System.out.println("❌ GAGAL: User tidak ditemukan di database!");
+                System.out.println(" GAGAL: User tidak ditemukan di database!");
                 return null;
             }
             
-            System.out.println("✅ User ditemukan: " + p.getNama());
+            System.out.println("User ditemukan: " + p.getNama());
             System.out.println("   Password di DB: " + p.getPassword());
             System.out.println("   Password Input: " + password);
             
-            // Cek Password (Case Sensitive)
+      
             if (!password.equals(p.getPassword())) {
-                System.out.println("❌ GAGAL: Password tidak cocok!");
+                System.out.println(" GAGAL: Password tidak cocok!");
                 return null; 
             }
             

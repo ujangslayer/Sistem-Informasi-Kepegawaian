@@ -39,7 +39,6 @@ public class PegawaiController {
     private final ObservableList<Pegawai> data = FXCollections.observableArrayList();
     
     private Integer editId = null; 
-    // TAMBAHAN PENTING: Variabel untuk menyimpan Role saat sedang diedit
     private String tempRoleForEdit = "USER"; 
 
     @FXML
@@ -59,8 +58,7 @@ public class PegawaiController {
 
     private void populateForm(Pegawai p) {
         editId = p.getId(); 
-        
-        // SIMPAN ROLE ASLINYA BIAR GAK KE-RESET JADI USER
+ 
         tempRoleForEdit = p.getRole(); 
         
         txtNip.setText(p.getNip());
@@ -119,14 +117,14 @@ public class PegawaiController {
             }
 
             if (editId == null) {
-                // --- MODE CREATE ---
-                p.setRole("USER"); // Default role untuk pegawai baru
+             
+                p.setRole("USER"); 
                 dao.insert(p);
                 showAlert(Alert.AlertType.INFORMATION, "Sukses", "Data disimpan.");
             } else {
-                // --- MODE UPDATE ---
+               
                 p.setId(editId); 
-                p.setRole(tempRoleForEdit); // PENTING: Gunakan role asli, jangan diubah jadi USER
+                p.setRole(tempRoleForEdit); 
                 dao.update(p);
                 showAlert(Alert.AlertType.INFORMATION, "Sukses", "Data diupdate.");
             }
@@ -141,7 +139,7 @@ public class PegawaiController {
     @FXML
     private void clearForm() {
         editId = null;
-        tempRoleForEdit = "USER"; // Reset
+        tempRoleForEdit = "USER"; 
         txtNip.clear();
         txtNama.clear();
         txtUsername.clear();

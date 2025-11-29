@@ -34,7 +34,6 @@ public class PayrollService {
         if (j == null) return BigDecimal.ZERO;
         BigDecimal gajiPokok = j.getGajiPokok();
 
-        // hitung alpha pada bulan itu
         List<Absensi> all = absensiDAO.findByPegawai(pegawaiId);
         long alpha = all.stream()
                 .filter(a -> a.getTanggal().getMonth().equals(month.getMonth()) && a.getTanggal().getYear() == month.getYear())
@@ -46,7 +45,6 @@ public class PayrollService {
         return gajiPokok.subtract(potonganTotal);
     }
 
-    // contoh export slip gaji sederhana
     public void exportPayrollCSV(int pegawaiId, YearMonth month, String filepath) throws Exception {
         BigDecimal gaji = hitungGajiBulan(pegawaiId, month);
         Pegawai p = pegawaiDAO.findById(pegawaiId);

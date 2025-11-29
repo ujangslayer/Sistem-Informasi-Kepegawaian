@@ -18,13 +18,13 @@ import java.util.List;
 
 public class ProfilPegawaiController {
 
-    // Label untuk Data Diri
+    
     @FXML private Label lblNip;
     @FXML private Label lblNama;
     @FXML private Label lblJabatan;
     @FXML private Label lblRole;
 
-    // Tabel Riwayat Absensi
+  
     @FXML private TableView<Absensi> table;
     @FXML private TableColumn<Absensi, String> colTanggal;
     @FXML private TableColumn<Absensi, String> colMasuk;
@@ -35,9 +35,9 @@ public class ProfilPegawaiController {
     private final JabatanDAOImpl jabatanDao = new JabatanDAOImpl();
     private final ObservableList<Absensi> dataAbsensi = FXCollections.observableArrayList();
 
-    private Pegawai pegawai; // Data pegawai yang sedang login
+    private Pegawai pegawai; 
 
-    // Method ini dipanggil dari Dashboard untuk menerima data user
+   
     public void setPegawai(Pegawai p) {
         this.pegawai = p;
         loadDataDiri();
@@ -50,7 +50,7 @@ public class ProfilPegawaiController {
             lblNama.setText(": " + pegawai.getNama());
             lblRole.setText(": " + pegawai.getRole());
 
-            // Cari Nama Jabatan berdasarkan ID
+            
             try {
                 if (pegawai.getJabatanId() != null) {
                     Jabatan j = jabatanDao.findById(pegawai.getJabatanId());
@@ -69,13 +69,13 @@ public class ProfilPegawaiController {
     }
 
     private void loadRiwayatAbsensi() {
-        // Setup Kolom Tabel
+        
         colTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggal"));
         colMasuk.setCellValueFactory(new PropertyValueFactory<>("waktuMasuk"));
         colPulang.setCellValueFactory(new PropertyValueFactory<>("waktuPulang"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Ambil data absensi HANYA milik pegawai ini
+       
         if (pegawai != null) {
             try {
                 List<Absensi> list = absensiDao.findByPegawai(pegawai.getId());
